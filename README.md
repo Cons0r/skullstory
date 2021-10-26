@@ -1,1 +1,1 @@
-# skullstory
+# Python Flask project
