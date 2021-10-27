@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block header %}Sign Up{% endblock %}
+{% block content %}
+<div align="center" style="padding-left: 75px; padding-right: 75px;">
+  <form action="" method="POST">
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="exampleFormControlInput1" name="email" required>
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="password" name="pw" required>
+      <label for="password" class="form-label">Password</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="password" name="pw2" required>
+      <label for="password" class="form-label">Password Again</label>
+    </div>
+    <div class="form-floating mb-3">
+    <input type="text" id="username" name="username" class="form-control" aria-label="Username" aria-describedby="UsernameAT" required>
+    <label class="form-label" for="username">Username</label>
+    </div>
+    <div class="form-input" align="center">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Accept Cookies
+      </label>
+    </div>
+  <div>
+  <input class="btn btn-dark" type="submit" value="Sign Up">
+  </div>
+  </form>
+<div class="text-muted">Note: Profile pictures are not uploaded directly to the site instead, create a <a href="en.gravatar.com/">Gravatar</a> account otherwise your profile picture will be: <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?s=25" alt="Defualt Profile image not loaded" class="rounded-circle"></div>
+</div>
+{% endblock %}

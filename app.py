@@ -1,5 +1,4 @@
-from website import create_app
+from website import create_app, apis
+import os
 app = create_app()
-
-if __name__ == "__main__":
-  app.run('0.0.0.0', 8080, True)
+app.run('0.0.0.0', 8080, True)

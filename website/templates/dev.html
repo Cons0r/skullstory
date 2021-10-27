@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Dev Mode{% endblock %}
+{% block header %}Welcome, Maverickquill55{% endblock %}
+{% block content %}
+{% if done == False %}
+<meta http-equiv="Refresh" content="10; url='/admin/done'"/>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped growwidth text-muted bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >Hello, User</div>
+</div>
+{% endif %}
+{% endblock %}
