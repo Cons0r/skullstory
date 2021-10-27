@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Create{% endblock %}
+{% block header %}Create Post{% endblock %}
+{% block content %}
+<div style="padding-left: 0em; padding-right: 0em;">
+<div align="center" class="card">
+<form action="" method="post">
+<div class="card-header">
+<textarea class="form-control" name="body" id="body" cols="90" rows="10" placeholder="Whats on your mind?" required>
+</textarea><br>
+<button type="submit" class="btn btn-dark">Post</button>
+</div>
+</form>
+</div>
+</div>
+{% endblock %}
