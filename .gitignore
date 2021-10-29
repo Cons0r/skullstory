@@ -1,2 +1,5 @@
 publish.bat
 database.db
+.key
+.keyval
+.env
