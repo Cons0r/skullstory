@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path, environ, getcwd
 from flask_login import LoginManager, UserMixin
 import datetime
-from . import apis
+from . import apis, security
 import time
 from sqlalchemy.sql import func
 from sqlalchemy.orm import column_property
@@ -22,6 +22,7 @@ class User(db.Model, UserMixin):
   email = db.Column(db.String(150), unique=True)
   username = db.Column(db.String(150), unique=True)
   password = db.Column(db.String(150), unique=False)
+  dev = db.Column(db.Boolean)
   date_created = db.Column(db.DateTime(timezone=True), default=apis.now())
   posts = db.relationship('Post', backref='user', passive_deletes=True)
   gravatar = db.Column(db.String(150), unique=True)
@@ -39,9 +40,10 @@ class PostLike(db.Model):
 DB_NAME = 'database.db'
 def create_app():
   app = Flask(__name__)
-  environ['SECRET_KEY'] = "b18086ab-9a31-460c-8642-abef2d896995"
+  environ['SECRET_KEY'] = security.newkey()
   app.config['SECRET_KEY'] = environ['SECRET_KEY']
   app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+  app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
   app.config['REMEMBER_COOKIE_DURATION'] = datetime.timedelta(weeks=5)
   db.init_app(app)
   create_database(app)
