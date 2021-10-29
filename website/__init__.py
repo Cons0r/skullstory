@@ -58,6 +58,9 @@ def create_app():
   @login_manager.user_loader
   def load_user(id):
     return User.query.get(int(id))
+  @app.route("/css/<filen>")
+  def css(filen):
+      return send_from_directory(os.path.join(app.root_path, 'static/css'), filen, mimetype='text/css')
   @app.route('/favicon.ico')
   def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')

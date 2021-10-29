@@ -2,7 +2,7 @@ import hashlib
 import requests
 import os
 import datetime
-
+from bs4 import BeautifulSoup
 def now():
   return datetime.datetime.now()
 def genergrav(email):
@@ -23,3 +23,9 @@ def report(text):
     return True
   else:
     return False
+def parsedown(html):
+  soup = BeautifulSoup(html, 'html.parser')
+  for link in soup.find_all('a'):
+    link['class'] = ['fancy']
+    link['target'] = '_blank'
+  return soup.prettify()
