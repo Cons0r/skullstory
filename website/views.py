@@ -58,7 +58,7 @@ def user(uid):
                                user=current_user,
                                posts=suser.posts,
                                suser=suser,
-                               numpost=len(suser.posts))
+                               num=len)
     else:
         flash('that user id doesnt exist!', 'danger')
         return redirect(url_for('views.home'))
