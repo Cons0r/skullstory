@@ -3,10 +3,9 @@ import datetime
 from flask_login import current_user, login_required, fresh_login_required
 from sqlalchemy.sql import func
 from markdown import markdown as mkdn
-
-markdown = lambda x: Markup(mkdn(x))
 from . import User, db, Post
 from . import apis
+markdown = lambda x: apis.parsedown(Markup(mkdn(x)))
 
 views = Blueprint('views', __name__)
 

@@ -1,0 +1,22 @@
+.fancy {
+  background-image: linear-gradient(to right, red, blue);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 3px;
+  transition: background-size 500ms ease-in-out;
+  text-decoration: none;
+  color: inherit;
+  /* extra styling   */
+  font-weight: 800;
+}
+
+.fancy:hover {
+  background-size: 100% 3px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.fancy:focus, .fancy:active {
+  text-decoration: none;
+  color: inherit;
+}
